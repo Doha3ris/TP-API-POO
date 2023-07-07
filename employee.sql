@@ -4,7 +4,7 @@ DROP TABLE "employee";
 
 CREATE TABLE IF NOT EXISTS "public"."employee"
 (
-    "id"          SERIAL NOT NULL,
+    "id"          integer SERIAL NOT NULL,
     "name"        character varying(255) NOT NULL,
     "email"       character varying(255) NOT NULL,
     "age"         integer,

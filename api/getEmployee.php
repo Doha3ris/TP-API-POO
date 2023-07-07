@@ -16,19 +16,18 @@ $item->getSingleEmployee();
 
 if ($item->name != null) {
 
-    $newEmployee = array(
+    $employeeArray = [
         "id" => $item->id,
         "name" => $item->name,
         "email" => $item->email,
         "age" => $item->age,
         "designation" => $item->designation,
         "hiring_date" => $item->hiringDate
-    );
+    ];
 
     http_response_code(200);
-    echo json_encode($newEmployee);
+    echo json_encode($employeeArray);
 } else {
     http_response_code(404);
-    echo json_encode("Something went wrong, employee hasn't been created.");
+    echo json_encode("Employee " . $item->id . "doesn't exists.");
 }
-?>

@@ -21,16 +21,14 @@ if ($itemCount > 0) {
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
-        $e = array(
+        $employeeArr["body"][] = [
             "id" => $id,
             "name" => $name,
             "email" => $email,
             "age" => $age,
             "designation" => $designation,
             "hiring_date" => $hiring_date
-        );
-
-        $employeeArr["body"][] = $e;
+        ];
     }
 
     echo json_encode($employeeArr);
